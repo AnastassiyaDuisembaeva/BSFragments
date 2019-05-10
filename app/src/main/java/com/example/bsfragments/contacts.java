@@ -35,8 +35,8 @@ public class contacts extends Fragment {
     }
 
     @Override
-    public void onStart() {
-        super.onStart();
+    public void onResume() {
+        super.onResume();
         MapKitFactory.setApiKey(MAPKIT_API_KEY);
         MapKitFactory.initialize(getActivity());
         mapview = (MapView)getView().findViewById(R.id.map);
@@ -44,6 +44,10 @@ public class contacts extends Fragment {
                 new CameraPosition(TARGET_LOCATION, 14.0f, 0.0f, 0.0f),
                 new Animation(Animation.Type.SMOOTH, 5),
                 null);
+    }
+    @Override
+    public void onStart() {
+        super.onStart();
         MapKitFactory.getInstance().onStart();
         mapview.onStart();
     }
