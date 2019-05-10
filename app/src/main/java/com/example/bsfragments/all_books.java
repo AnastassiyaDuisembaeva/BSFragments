@@ -20,13 +20,19 @@ public class all_books extends Fragment  {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setInitialData();
+        return inflater.inflate(R.layout.fragment_all_books, null);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
         RecyclerView recyclerView = (RecyclerView) getView().findViewById(R.id.booksList);
         DataAdapter adapter = new DataAdapter(getActivity(), items);
         //добавление notifyDataSetChanged();
         adapter.notifyDataSetChanged();
         recyclerView.setAdapter(adapter);
-        return inflater.inflate(R.layout.fragment_all_books, null);
     }
+
     private void setInitialData(){
         items.add(new Item ("Происхождение", "Дэн Браун", "детективы", "1500", R.drawable.braun));
         items.add(new Item ("Убийство в Восточном экспрессе", "Агата Кристи", "детективы", "1700", R.drawable.kristi));

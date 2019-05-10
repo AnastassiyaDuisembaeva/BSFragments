@@ -24,11 +24,6 @@ public class contacts extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mapview = (MapView)getView().findViewById(R.id.map);
-        mapview.getMap().move(
-                new CameraPosition(TARGET_LOCATION, 14.0f, 0.0f, 0.0f),
-                new Animation(Animation.Type.SMOOTH, 5),
-                null);
         return inflater.inflate(R.layout.fragment_contacts, container, false);
     }
 
@@ -44,6 +39,11 @@ public class contacts extends Fragment {
         super.onStart();
         MapKitFactory.setApiKey(MAPKIT_API_KEY);
         MapKitFactory.initialize(getActivity());
+        mapview = (MapView)getView().findViewById(R.id.map);
+        mapview.getMap().move(
+                new CameraPosition(TARGET_LOCATION, 14.0f, 0.0f, 0.0f),
+                new Animation(Animation.Type.SMOOTH, 5),
+                null);
         MapKitFactory.getInstance().onStart();
         mapview.onStart();
     }
