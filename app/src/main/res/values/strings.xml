@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">BookStore</string>
+    <string name="title_home">Главная</string>
+    <string name="title_dashboard">Все книги</string>
+    <string name="title_notifications">Контакты</string>
+    <string name="title_address">Адрес: </string>
+    <string name="value_address">ул. Толе би, д. 49 </string>
+    <string name="title_phone">Телефон: </string>
+    <string name="value_phone">+7 (777) 777-77-77</string>
+</resources>
